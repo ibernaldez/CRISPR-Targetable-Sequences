@@ -9,5 +9,15 @@ def print_lines():
     stdin_stack = []
     for line in sys.stdin:
         stdin_stack.append(line.strip())
-    print(stdin_stack[:20] + ["/n"])
+    std = stdin_stack[:7]
+    count = -1
+    for i in std:
+        count += 1
+        y = i[-2:]
+        if y == "gc":
+
+            print("yay!")
+            print(i)
+            print(count)
+    print(std)
 print_lines()
