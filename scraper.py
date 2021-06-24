@@ -11,11 +11,15 @@ def print_lines():
         stdin_stack.append(line.strip())
     count = -1
     for i in stdin_stack:
-        count += 1
-        y = i[-2:]
-        if y == "gc":
+        for j in range(len(i)):
+            count += 1
+            y = i[j]
+            try:
+                x = i[j+1]
+            except IndexError:
+                x = i[j]
 
-            print("yay!")
-            print(i)
-            print(count)
+            if y == "g" and x =="c":
+                print("Position:" + str(count))
+                print(i)
 print_lines()
